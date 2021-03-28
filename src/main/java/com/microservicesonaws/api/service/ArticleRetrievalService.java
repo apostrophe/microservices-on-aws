@@ -2,46 +2,48 @@ package com.microservicesonaws.api.service;
 
 import java.util.ArrayList;
 import java.util.List;
-
 import org.springframework.stereotype.Service;
-
 import com.fasterxml.jackson.databind.ObjectMapper;
-import com.microservicesonaws.api.model.Article;
-import com.microservicesonaws.api.model.WebItResponse;
+import com.microservicesonaws.api.model.ContentArticle;
+import com.microservicesonaws.api.model.ContentResponse;
 import com.squareup.okhttp.OkHttpClient;
 import com.squareup.okhttp.Request;
 import com.squareup.okhttp.Response;
-import com.squareup.okhttp.ResponseBody;
 
 @Service
 public class ArticleRetrievalService {
 
-	public List<Article> retrieveArticlesBasedOnKeywordSearch(String keyword) {
+	public List<ContentArticle> retrieveLatestArticles(String section) {
 
 		try {
 			OkHttpClient client = new OkHttpClient();
 
 			Request request = new Request.Builder()
-					.url("https://webit-news-search.p.rapidapi.com/search?q="+keyword+"&language=en&number=8&offset=0")
+					.url("https://api.nytimes.com/svc/news/v3/content/nyt/"+section+".json?limit=20&offset=0&api-key=***REMOVED***")
 					.get()
-					.addHeader("x-rapidapi-key", "***REMOVED***")
-					//				.addHeader("x-rapidapi-host", "webit-news-search.p.rapidapi.com")
 					.build();
 
 			Response response = client.newCall(request).execute();
-
-			ObjectMapper objectMapper = new ObjectMapper();
-			WebItResponse webItResponse = objectMapper.readValue(response.body().string(), WebItResponse.class);
 			
-			if (webItResponse.getStatus().equalsIgnoreCase("success")) {
-				return webItResponse.getData().getResults();
-			} else {
-				return new ArrayList<Article>();
+			if (response.isSuccessful()) {
+				ObjectMapper objectMapper = new ObjectMapper();
+				ContentResponse contentResponse = objectMapper.readValue(response.body().string(), ContentResponse.class);
+				
+				return contentResponse.getResults();
 			}
+			
+			return null;
 
 		} catch (Exception e) {
 			System.out.println("**** "+e);
-			return new ArrayList<Article>();
+			return new ArrayList<ContentArticle>();
 		}
 	}
+	
+	public List<ContentArticle> retrieveArticlesBasedOnKeywordSearch(String keyword) {
+		
+		return null;
+		
+	}
+
 }
