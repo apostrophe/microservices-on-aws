@@ -4,6 +4,8 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.Properties;
 
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.stereotype.Service;
 import com.fasterxml.jackson.databind.ObjectMapper;
@@ -16,15 +18,15 @@ import com.squareup.okhttp.Response;
 @Service
 public class ArticleRetrievalService {
 	
-	@Value("${nytimes-api-key}")
-	private String apikey;
+	@Autowired
+	private String apiKey;
 
 	public List<ContentArticle> retrieveLatestArticles(String section) {
 
 		try {
 			
 			Request request = new Request.Builder()
-					.url("https://api.nytimes.com/svc/news/v3/content/nyt/"+section+".json?limit=20&offset=0&api-key="+apikey)
+					.url("https://api.nytimes.com/svc/news/v3/content/nyt/"+section+".json?limit=20&offset=0&api-key="+apiKey)
 					.get()
 					.build();
 

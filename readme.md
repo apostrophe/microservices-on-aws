@@ -2,6 +2,7 @@
 
 Running and calling this API
 
+	- add API key to file src/main/resources/apikey
 	- from eclipse: Package Explorer > right-click on project > Run As > Spring Boot App
 	- from command line, run one of the following:
 	
