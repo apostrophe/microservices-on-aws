@@ -2,6 +2,9 @@ package com.microservicesonaws.api.service;
 
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Properties;
+
+import org.springframework.beans.factory.annotation.Value;
 import org.springframework.stereotype.Service;
 import com.fasterxml.jackson.databind.ObjectMapper;
 import com.microservicesonaws.api.model.ContentArticle;
@@ -12,17 +15,20 @@ import com.squareup.okhttp.Response;
 
 @Service
 public class ArticleRetrievalService {
+	
+	@Value("${nytimes-api-key}")
+	private String apikey;
 
 	public List<ContentArticle> retrieveLatestArticles(String section) {
 
 		try {
-			OkHttpClient client = new OkHttpClient();
-
+			
 			Request request = new Request.Builder()
-					.url("https://api.nytimes.com/svc/news/v3/content/nyt/"+section+".json?limit=20&offset=0&api-key=***REMOVED***")
+					.url("https://api.nytimes.com/svc/news/v3/content/nyt/"+section+".json?limit=20&offset=0&api-key="+apikey)
 					.get()
 					.build();
 
+			OkHttpClient client = new OkHttpClient();
 			Response response = client.newCall(request).execute();
 			
 			if (response.isSuccessful()) {
