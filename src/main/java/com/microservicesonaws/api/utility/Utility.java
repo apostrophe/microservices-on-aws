@@ -24,8 +24,16 @@ public class Utility {
 	}
 
 	public static String readFileToString(String path) {
-	    ResourceLoader resourceLoader = new DefaultResourceLoader();
-	    Resource resource = resourceLoader.getResource(path);
+	    Resource resource = null;
+		try {
+		    ResourceLoader resourceLoader = new DefaultResourceLoader();
+		    resource = resourceLoader.getResource(path);
+		    if (!resource.exists()) {
+		    	throw new IOException("resource doesn't exist");
+		    }
+		} catch (Exception e) {
+			
+		}
 	    return asString(resource);
 	}
 	
