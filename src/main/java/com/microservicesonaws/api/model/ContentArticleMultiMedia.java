@@ -4,8 +4,8 @@ public class ContentArticleMultiMedia {
 
     private String url;
 	private String format;
-	private String height;
-	private String width;
+	private int height;
+	private int width;
 	private String type;
 	private String subtype;
 	private String caption;
@@ -23,16 +23,16 @@ public class ContentArticleMultiMedia {
 	public void setFormat(String format) {
 		this.format = format;
 	}
-	public String getHeight() {
+	public int getHeight() {
 		return height;
 	}
-	public void setHeight(String height) {
+	public void setHeight(int height) {
 		this.height = height;
 	}
-	public String getWidth() {
+	public int getWidth() {
 		return width;
 	}
-	public void setWidth(String width) {
+	public void setWidth(int width) {
 		this.width = width;
 	}
 	public String getType() {
@@ -59,5 +59,6 @@ public class ContentArticleMultiMedia {
 	public void setCopyright(String copyright) {
 		this.copyright = copyright;
 	}
+	
 
 }

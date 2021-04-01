@@ -26,7 +26,7 @@ public class ArticleRetrievalService {
 		try {
 			
 			Request request = new Request.Builder()
-					.url("https://api.nytimes.com/svc/news/v3/content/nyt/"+section+".json?limit=20&offset=0&api-key="+apiKey)
+					.url("https://api.nytimes.com/svc/news/v3/content/nyt/"+section+".json?limit=200&offset=0&api-key="+apiKey)
 					.get()
 					.build();
 

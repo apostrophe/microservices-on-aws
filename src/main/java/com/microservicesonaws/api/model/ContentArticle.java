@@ -2,8 +2,10 @@ package com.microservicesonaws.api.model;
 
 import java.util.List;
 
+import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 import com.fasterxml.jackson.annotation.JsonProperty;
 
+@JsonIgnoreProperties({"related_urls"})
 public class ContentArticle {
 
 	private String slug_name;
