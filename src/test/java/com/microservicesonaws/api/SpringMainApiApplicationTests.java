@@ -19,7 +19,7 @@ import com.squareup.okhttp.Request;
 import com.squareup.okhttp.Response;
 
 @SpringBootTest
-class SpringMainApi2ApplicationTests {
+class SpringMainApiApplicationTests {
 
 	@Autowired
 	private NewsController newsController;

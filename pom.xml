@@ -10,9 +10,9 @@
 		<relativePath /> <!-- lookup parent from repository -->
 	</parent>
 	<groupId>com.new</groupId>
-	<artifactId>spring-main-api-2</artifactId>
+	<artifactId>spring-main-api</artifactId>
 	<version>0.0.1-SNAPSHOT</version>
-	<name>spring-main-api-2</name>
+	<name>spring-main-api</name>
 	<description>Demo project for Spring Boot</description>
 	<properties>
 		<java.version>11</java.version>
@@ -39,20 +39,6 @@
 			<artifactId>okhttp</artifactId>
 			<version>2.7.5</version>
 		</dependency>
-
-		<!-- https://mvnrepository.com/artifact/tangrammer/java-net-http-client -->
-		<!-- <dependency> -->
-		<!-- <groupId>tangrammer</groupId> -->
-		<!-- <artifactId>java-net-http-client</artifactId> -->
-		<!-- <version>0.1.2</version> -->
-		<!-- </dependency> -->
-
-		<!-- https://mvnrepository.com/artifact/org.asynchttpclient/async-http-client -->
-		<!-- <dependency> -->
-		<!-- <groupId>org.asynchttpclient</groupId> -->
-		<!-- <artifactId>async-http-client</artifactId> -->
-		<!-- <version>2.12.2</version> -->
-		<!-- </dependency> -->
 
 		<!-- https://mvnrepository.com/artifact/com.fasterxml.jackson.core/jackson-databind -->
 		<dependency>
