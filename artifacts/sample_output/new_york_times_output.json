@@ -1,0 +1,79 @@
+[
+  {
+    "slug_name": "28myanmar-soldier",
+    "section": "World",
+    "subsection": "Asia Pacific",
+    "title": "Inside Myanmar’s Army: ‘They See Protesters as Criminals’",
+    "url": "https://www.nytimes.com/2021/03/28/world/asia/myanmar-army-protests.html",
+    "byline": "BY HANNAH BEECH",
+    "thumbnail_standard": "https://static01.nyt.com/images/2021/03/28/world/00myanmar-soldier-ledesub1/00myanmar-soldier-ledesub1-thumbStandard.jpg",
+    "item_type": "Article",
+    "source": "New York Times",
+    "updated_date": "2021-03-28T12:56:49-04:00",
+    "created_date": "2021-03-28T10:52:37-04:00",
+    "published_date": "2021-03-28T10:52:37-04:00",
+    "first_published_date": "2021-03-28T10:52:37-04:00",
+    "material_type_facet": "News",
+    "kicker": "",
+    "subheadline": "",
+    "des_facet": [
+      "War Crimes, Genocide and Crimes Against Humanity",
+      "Coups D'Etat and Attempted Coups D'Etat",
+      "Demonstrations, Protests and Riots"
+    ],
+    "org_facet": [
+      "Tatmadaw (Myanmar)"
+    ],
+    "per_facet": [
+      "Min Aung Hlaing"
+    ],
+    "geo_facet": [
+      "Myanmar",
+      "Naypyidaw (Myanmar)"
+    ],
+    "related_urls": null,
+    "multimedia": [
+      {
+        "url": "https://static01.nyt.com/images/2021/03/28/world/00myanmar-soldier-ledesub1/00myanmar-soldier-ledesub1-thumbStandard.jpg",
+        "format": "Standard Thumbnail",
+        "height": "75",
+        "width": "75",
+        "type": "image",
+        "subtype": "photo",
+        "caption": "Capt. Tun Myat Aung, a deserted soldier who joined the anti-coup movement.",
+        "copyright": "The New York Times"
+      },
+      {
+        "url": "https://static01.nyt.com/images/2021/03/28/world/00myanmar-soldier-ledesub1/merlin_185300442_f62b7afc-3f78-40c3-a54c-677b066d188a-mediumThreeByTwo210.jpg",
+        "format": "mediumThreeByTwo210",
+        "height": "140",
+        "width": "210",
+        "type": "image",
+        "subtype": "photo",
+        "caption": "Capt. Tun Myat Aung, a deserted soldier who joined the anti-coup movement.",
+        "copyright": "The New York Times"
+      },
+      {
+        "url": "https://static01.nyt.com/images/2021/03/28/world/00myanmar-soldier-ledesub1/merlin_185300442_f62b7afc-3f78-40c3-a54c-677b066d188a-mediumThreeByTwo440.jpg",
+        "format": "mediumThreeByTwo440",
+        "height": "293",
+        "width": "440",
+        "type": "image",
+        "subtype": "photo",
+        "caption": "Capt. Tun Myat Aung, a deserted soldier who joined the anti-coup movement.",
+        "copyright": "The New York Times"
+      },
+      {
+        "url": "https://static01.nyt.com/images/2021/03/28/world/00myanmar-soldier-ledesub1/merlin_185300442_f62b7afc-3f78-40c3-a54c-677b066d188a-articleInline.jpg",
+        "format": "Normal",
+        "height": "127",
+        "width": "190",
+        "type": "image",
+        "subtype": "photo",
+        "caption": "Capt. Tun Myat Aung, a deserted soldier who joined the anti-coup movement.",
+        "copyright": "The New York Times"
+      }
+    ],
+    "abstract": "Four officers spoke about life in the feared Tatmadaw, which has turned its guns on civilians again. “The Tatmadaw is the only world” for most soldiers, one said."
+  }
+]

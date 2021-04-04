@@ -27,3 +27,37 @@ Running and calling this API:
 	$ curl -X GET "http://localhost:8080/v1/articles/latest/opinion" | jq -r '.[].title'
 ````	
 
+`jq` is a command-line json formatter ([installation instructions](https://stedolan.github.io/jq/download/)) 
+
+
+### Deployment to AWS EC2 Instance Using a CloudFormation Template ###
+
+- Build this project using maven
+	- $ mvn clean package
+
+- Copy the jar to an s3 bucket
+	- $ aws s3 cp target/spring-main-api-0.0.1-SNAPSHOT.jar s3://microservices-on-aws/
+	
+- CloudFormation template is stored at artifacts/cloudformation/cf-template.yaml
+- It creates an EC2 instance, security group, and instance profile.
+- Userdata installs java, copies the jar from s3, and runs it.
+
+- Creating the stack from the cf template:
+````bash
+	$ aws cloudformation create-stack \
+		--stack-name spring-main-api \
+		--template-body file://`pwd`/artifacts/cloudformation/cf-template.yaml \
+		--parameters \
+		ParameterKey=InstanceType,ParameterValue=t3.small \
+		ParameterKey=KeyName,ParameterValue=key-pair00 \
+		ParameterKey=LatestAmiId,ParameterValue=/aws/service/ami-amazon-linux-latest/amzn2-ami-hvm-x86_64-gp2\
+		ParameterKey=SSHLocation,ParameterValue=0.0.0.0/0 --capabilities CAPABILITY_IAM
+
+	$ aws cloudformation delete-stack --stack-name spring-main-api
+
+	$ aws cloudformation validate-template --template-body file://`pwd`/artifacts/cloudformation/cf-template.yaml
+
+````
+
+
+

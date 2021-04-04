@@ -5,7 +5,8 @@ import java.util.List;
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 import com.fasterxml.jackson.annotation.JsonProperty;
 
-@JsonIgnoreProperties({"related_urls"})
+// there's an issue reading this element
+@JsonIgnoreProperties({"related_urls"}) 
 public class ContentArticle {
 
 	private String slug_name;
