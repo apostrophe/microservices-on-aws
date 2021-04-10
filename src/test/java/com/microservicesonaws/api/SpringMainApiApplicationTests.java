@@ -12,7 +12,7 @@ import org.springframework.test.context.ContextConfiguration;
 import org.springframework.test.context.web.WebAppConfiguration;
 
 import com.microservicesonaws.api.controllers.NewsController;
-import com.microservicesonaws.api.model.ContentArticle;
+import com.microservicesonaws.api.model.SectionTopArticle;
 import com.microservicesonaws.api.utility.Utility;
 import com.squareup.okhttp.OkHttpClient;
 import com.squareup.okhttp.Request;
@@ -37,7 +37,7 @@ class SpringMainApiApplicationTests {
 	
 	@Test
 	void newsControllerReturnsBasicContent() throws Exception {
-		List<ContentArticle> articles = newsController.latestArticles("opinion");
+		List<SectionTopArticle> articles = newsController.latestArticles("opinion");
 		assertThat(articles.size() > 0);
 	}
 

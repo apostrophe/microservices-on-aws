@@ -7,7 +7,7 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 
 // there's an issue reading this element
 @JsonIgnoreProperties({"related_urls"}) 
-public class ContentArticle {
+public class SectionTopArticle {
 
 	private String slug_name;
 	private String section;
@@ -32,7 +32,7 @@ public class ContentArticle {
     private List<String> per_facet;
     private List<String> geo_facet;
 	private List<String> related_urls;
-	private List<ContentArticleMultiMedia> multimedia;
+	private List<SectionTopArticleMultiMedia> multimedia;
 	
 	public String getSlug_name() {
 		return slug_name;
@@ -166,10 +166,10 @@ public class ContentArticle {
 	public void setRelated_urls(List<String> related_urls) {
 		this.related_urls = related_urls;
 	}
-	public List<ContentArticleMultiMedia> getMultimedia() {
+	public List<SectionTopArticleMultiMedia> getMultimedia() {
 		return multimedia;
 	}
-	public void setMultimedia(List<ContentArticleMultiMedia> multimedia) {
+	public void setMultimedia(List<SectionTopArticleMultiMedia> multimedia) {
 		this.multimedia = multimedia;
 	}
 	

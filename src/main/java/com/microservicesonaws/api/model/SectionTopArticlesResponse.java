@@ -2,12 +2,12 @@ package com.microservicesonaws.api.model;
 
 import java.util.List;
 
-public class ContentResponse {
+public class SectionTopArticlesResponse {
 
 	private String status;
 	private String copyright;
 	private int num_results;
-	private List<ContentArticle> results;
+	private List<SectionTopArticle> results;
 	
 	public String getStatus() {
 		return status;
@@ -27,10 +27,10 @@ public class ContentResponse {
 	public void setNum_results(int num_results) {
 		this.num_results = num_results;
 	}
-	public List<ContentArticle> getResults() {
+	public List<SectionTopArticle> getResults() {
 		return results;
 	}
-	public void setResults(List<ContentArticle> results) {
+	public void setResults(List<SectionTopArticle> results) {
 		this.results = results;
 	}
 	

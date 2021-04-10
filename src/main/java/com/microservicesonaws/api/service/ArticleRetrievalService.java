@@ -9,8 +9,8 @@ import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.stereotype.Service;
 import com.fasterxml.jackson.databind.ObjectMapper;
-import com.microservicesonaws.api.model.ContentArticle;
-import com.microservicesonaws.api.model.ContentResponse;
+import com.microservicesonaws.api.model.SectionTopArticle;
+import com.microservicesonaws.api.model.SectionTopArticlesResponse;
 import com.squareup.okhttp.OkHttpClient;
 import com.squareup.okhttp.Request;
 import com.squareup.okhttp.Response;
@@ -21,7 +21,7 @@ public class ArticleRetrievalService {
 	@Autowired
 	private String apiKey;
 
-	public List<ContentArticle> retrieveLatestArticles(String section) {
+	public List<SectionTopArticle> retrieveLatestArticles(String section) {
 
 		try {
 			
@@ -35,7 +35,7 @@ public class ArticleRetrievalService {
 			
 			if (response.isSuccessful()) {
 				ObjectMapper objectMapper = new ObjectMapper();
-				ContentResponse contentResponse = objectMapper.readValue(response.body().string(), ContentResponse.class);
+				SectionTopArticlesResponse contentResponse = objectMapper.readValue(response.body().string(), SectionTopArticlesResponse.class);
 				
 				return contentResponse.getResults();
 			}
@@ -44,11 +44,11 @@ public class ArticleRetrievalService {
 
 		} catch (Exception e) {
 			System.out.println("**** "+e);
-			return new ArrayList<ContentArticle>();
+			return new ArrayList<SectionTopArticle>();
 		}
 	}
 	
-	public List<ContentArticle> retrieveArticlesBasedOnKeywordSearch(String keyword) {
+	public List<SectionTopArticle> retrieveArticlesBasedOnKeywordSearch(String keyword) {
 		
 		return null;
 		

@@ -1,6 +1,6 @@
 package com.microservicesonaws.api.model;
 
-public class ContentArticleMultiMedia {
+public class SectionTopArticleMultiMedia {
 
     private String url;
 	private String format;
