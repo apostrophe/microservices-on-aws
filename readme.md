@@ -25,6 +25,10 @@ Running and calling this API:
 	
 	# get just the titles 
 	$ curl -X GET "http://localhost:8080/v1/articles/latest/opinion" | jq -r '.[].title'
+	
+	# a list of all sections
+	$ curl -X GET "http://localhost:8080/v1/articles/sections" | jq -r '.[].display_name' | less
+	
 ````	
 
 `jq` is a command-line json formatter ([installation instructions](https://stedolan.github.io/jq/download/)) 

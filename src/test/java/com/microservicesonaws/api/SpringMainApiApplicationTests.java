@@ -11,7 +11,7 @@ import org.springframework.boot.test.context.SpringBootTest;
 import org.springframework.test.context.ContextConfiguration;
 import org.springframework.test.context.web.WebAppConfiguration;
 
-import com.microservicesonaws.api.controllers.NewsController;
+import com.microservicesonaws.api.controllers.ArticlesController;
 import com.microservicesonaws.api.model.SectionTopArticle;
 import com.microservicesonaws.api.utility.Utility;
 import com.squareup.okhttp.OkHttpClient;
@@ -22,7 +22,7 @@ import com.squareup.okhttp.Response;
 class SpringMainApiApplicationTests {
 
 	@Autowired
-	private NewsController newsController;
+	private ArticlesController newsController;
 
 	@Test
 	void apiKeyFileIsAvailable() {

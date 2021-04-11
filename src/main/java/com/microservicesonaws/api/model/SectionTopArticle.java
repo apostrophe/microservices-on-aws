@@ -7,7 +7,7 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 
 // there's an issue reading this element
 @JsonIgnoreProperties({"related_urls"}) 
-public class SectionTopArticle {
+public class SectionTopArticle extends Result {
 
 	private String slug_name;
 	private String section;

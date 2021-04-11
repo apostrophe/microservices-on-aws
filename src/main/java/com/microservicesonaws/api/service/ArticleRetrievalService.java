@@ -2,13 +2,13 @@ package com.microservicesonaws.api.service;
 
 import java.util.ArrayList;
 import java.util.List;
-import java.util.Properties;
 
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.beans.factory.annotation.Qualifier;
-import org.springframework.beans.factory.annotation.Value;
 import org.springframework.stereotype.Service;
+
 import com.fasterxml.jackson.databind.ObjectMapper;
+import com.microservicesonaws.api.model.Section;
+import com.microservicesonaws.api.model.SectionListResponse;
 import com.microservicesonaws.api.model.SectionTopArticle;
 import com.microservicesonaws.api.model.SectionTopArticlesResponse;
 import com.squareup.okhttp.OkHttpClient;
@@ -20,6 +20,35 @@ public class ArticleRetrievalService {
 	
 	@Autowired
 	private String apiKey;
+	
+	public List<Section> retrieveSections() {
+
+		try {
+			
+			Request request = new Request.Builder()
+					.url("https://api.nytimes.com/svc/news/v3/content/section-list.json?api-key="+apiKey)
+					.get()
+					.build();
+
+			OkHttpClient client = new OkHttpClient();
+			Response response = client.newCall(request).execute();
+			
+			if (response.isSuccessful()) {
+				ObjectMapper objectMapper = new ObjectMapper();
+				SectionListResponse sectionListResponse = 
+						objectMapper.readValue(response.body().string(), SectionListResponse.class);
+				
+				return sectionListResponse.getResults();
+			}
+			
+			return null;
+
+		} catch (Exception e) {
+			System.out.println("**** "+e);
+			return new ArrayList<Section>();
+		}
+
+	}
 
 	public List<SectionTopArticle> retrieveLatestArticles(String section) {
 
