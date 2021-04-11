@@ -7,6 +7,8 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import com.fasterxml.jackson.databind.ObjectMapper;
+import com.microservicesonaws.api.model.ArticleSearchResponse;
+import com.microservicesonaws.api.model.SearchResponseArticle;
 import com.microservicesonaws.api.model.Section;
 import com.microservicesonaws.api.model.SectionListResponse;
 import com.microservicesonaws.api.model.SectionTopArticle;
@@ -77,9 +79,32 @@ public class ArticleRetrievalService {
 		}
 	}
 	
-	public List<SectionTopArticle> retrieveArticlesBasedOnKeywordSearch(String keyword) {
+	public List<SearchResponseArticle> retrieveArticlesBasedOnKeywordSearch(String searchTerm) {
 		
-		return null;
+		try {
+			
+			Request request = new Request.Builder()
+					.url("https://api.nytimes.com/svc/search/v2/articlesearch.json?q="+searchTerm+"&limit=1&api-key="+apiKey)
+					.get()
+					.build();
+
+			OkHttpClient client = new OkHttpClient();
+			Response response = client.newCall(request).execute();
+			
+			if (response.isSuccessful()) {
+				ObjectMapper objectMapper = new ObjectMapper();
+				ArticleSearchResponse articleSearchResponse
+					= objectMapper.readValue(response.body().string(), ArticleSearchResponse.class);
+				
+				return articleSearchResponse.getSearchResponse().getDocs();
+			}
+			
+			return null;
+
+		} catch (Exception e) {
+			System.out.println("**** "+e);
+			return new ArrayList<SearchResponseArticle>();
+		}
 		
 	}
 

@@ -29,6 +29,9 @@ Running and calling this API:
 	# a list of all sections
 	$ curl -X GET "http://localhost:8080/v1/articles/sections" | jq -r '.[].display_name' | less
 	
+	# search for articles
+	$ curl -X GET "http://localhost:8080/v1/articles/search/covid+vaccine" | jq '.' | less
+	
 ````	
 
 `jq` is a command-line json formatter ([installation instructions](https://stedolan.github.io/jq/download/)) 

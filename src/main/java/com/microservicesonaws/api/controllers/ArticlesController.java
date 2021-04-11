@@ -8,6 +8,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RestController;
 
+import com.microservicesonaws.api.model.SearchResponseArticle;
 import com.microservicesonaws.api.model.Section;
 import com.microservicesonaws.api.model.SectionTopArticle;
 import com.microservicesonaws.api.service.ArticleRetrievalService;
@@ -30,7 +31,7 @@ public class ArticlesController {
 	}
 
 	@RequestMapping(value="/search/{searchKeyword}", method=RequestMethod.GET)
-	public List<SectionTopArticle> retrieveArticles(@PathVariable("searchKeyword") String searchKeyword) {
+	public List<SearchResponseArticle> retrieveArticles(@PathVariable("searchKeyword") String searchKeyword) {
 		return retrievalService.retrieveArticlesBasedOnKeywordSearch(searchKeyword);
 	}
 
