@@ -1,4 +1,4 @@
-package com.microservicesonaws.api.model;
+package com.microservicesonaws.api.model.sections;
 
 import com.fasterxml.jackson.annotation.JsonProperty;
 

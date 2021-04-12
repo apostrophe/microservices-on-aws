@@ -12,7 +12,8 @@ import org.springframework.test.context.ContextConfiguration;
 import org.springframework.test.context.web.WebAppConfiguration;
 
 import com.microservicesonaws.api.controllers.ArticlesController;
-import com.microservicesonaws.api.model.SectionTopArticle;
+import com.microservicesonaws.api.model.sections.Section;
+import com.microservicesonaws.api.model.sections.SectionTopArticle;
 import com.microservicesonaws.api.utility.Utility;
 import com.squareup.okhttp.OkHttpClient;
 import com.squareup.okhttp.Request;
@@ -36,8 +37,32 @@ class SpringMainApiApplicationTests {
 	}
 	
 	@Test
-	void newsControllerReturnsBasicContent() throws Exception {
-		List<SectionTopArticle> articles = newsController.latestArticles("opinion");
+	void getSectionsEndpointReturnsContent() throws Exception {
+		List<Section> sections = newsController.getSections();
+		assertThat(sections.size() > 0);
+	}
+
+	@Test
+	void latestArticlesInTravelSectionReturnsContent() throws Exception {
+		List<SectionTopArticle> articles = newsController.latestArticles("travel");
+		assertThat(articles.size() > 0);
+	}
+
+	@Test
+	void latestArticlesInBusinessSectionReturnsContent() throws Exception {
+		List<SectionTopArticle> articles = newsController.latestArticles("business");
+		assertThat(articles.size() > 0);
+	}
+
+	@Test
+	void latestArticlesInWorldSectionReturnsContent() throws Exception {
+		List<SectionTopArticle> articles = newsController.latestArticles("world");
+		assertThat(articles.size() > 0);
+	}
+
+	@Test
+	void latestArticlesInAllSectionsReturnsContent() throws Exception {
+		List<SectionTopArticle> articles = newsController.latestArticles("all");
 		assertThat(articles.size() > 0);
 	}
 

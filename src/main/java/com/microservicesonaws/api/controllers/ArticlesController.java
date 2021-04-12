@@ -8,9 +8,9 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RestController;
 
-import com.microservicesonaws.api.model.SearchResponseArticle;
-import com.microservicesonaws.api.model.Section;
-import com.microservicesonaws.api.model.SectionTopArticle;
+import com.microservicesonaws.api.model.search.SearchResponseArticle;
+import com.microservicesonaws.api.model.sections.Section;
+import com.microservicesonaws.api.model.sections.SectionTopArticle;
 import com.microservicesonaws.api.service.ArticleRetrievalService;
 
 @RestController

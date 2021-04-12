@@ -7,12 +7,12 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import com.fasterxml.jackson.databind.ObjectMapper;
-import com.microservicesonaws.api.model.ArticleSearchResponse;
-import com.microservicesonaws.api.model.SearchResponseArticle;
-import com.microservicesonaws.api.model.Section;
-import com.microservicesonaws.api.model.SectionListResponse;
-import com.microservicesonaws.api.model.SectionTopArticle;
-import com.microservicesonaws.api.model.SectionTopArticlesResponse;
+import com.microservicesonaws.api.model.search.ArticleSearchResponse;
+import com.microservicesonaws.api.model.search.SearchResponseArticle;
+import com.microservicesonaws.api.model.sections.Section;
+import com.microservicesonaws.api.model.sections.SectionListResponse;
+import com.microservicesonaws.api.model.sections.SectionTopArticle;
+import com.microservicesonaws.api.model.sections.SectionTopArticlesResponse;
 import com.squareup.okhttp.OkHttpClient;
 import com.squareup.okhttp.Request;
 import com.squareup.okhttp.Response;

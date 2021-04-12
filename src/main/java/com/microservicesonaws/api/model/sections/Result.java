@@ -1,4 +1,4 @@
-package com.microservicesonaws.api.model;
+package com.microservicesonaws.api.model.sections;
 
 import java.util.List;
 

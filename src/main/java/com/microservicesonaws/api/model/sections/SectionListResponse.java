@@ -1,13 +1,13 @@
-package com.microservicesonaws.api.model;
+package com.microservicesonaws.api.model.sections;
 
 import java.util.List;
 
-public class SectionTopArticlesResponse {
+public class SectionListResponse {
 
 	private String status;
 	private String copyright;
 	private int num_results;
-	private List<SectionTopArticle> results;
+	private List<Section> results;
 	
 	public String getStatus() {
 		return status;
@@ -27,11 +27,11 @@ public class SectionTopArticlesResponse {
 	public void setNum_results(int num_results) {
 		this.num_results = num_results;
 	}
-	public List<SectionTopArticle> getResults() {
+	public List<Section> getResults() {
 		return results;
 	}
-	public void setResults(List<SectionTopArticle> results) {
+	public void setResults(List<Section> results) {
 		this.results = results;
 	}
-	
+
 }
